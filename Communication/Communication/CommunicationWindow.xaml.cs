@@ -19,10 +19,15 @@ namespace Communication
     /// </summary>
     public partial class CommunicationWindow : Window
     {
+        AppContext AC;
         public CommunicationWindow()
         {
             InitializeComponent();
-            sda.Text = NowClass.NOW;
+            AC = new AppContext();
+            var v = AC.Users.Where(c => c.login == NowClass.NOW).FirstOrDefault();
+            if (v.RoleID == 1) {
+                TextVIEW.Text = v.login + "\nПользователь";
+            }
         }
     }
 }

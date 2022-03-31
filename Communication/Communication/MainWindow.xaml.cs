@@ -34,6 +34,7 @@ namespace Communication
                 NowClass.NOW = r.login;
                 CommunicationWindow communicationWindow = new CommunicationWindow();
                 communicationWindow.Show();
+                this.Close();
             }
              
         }
