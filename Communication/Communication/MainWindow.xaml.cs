@@ -29,14 +29,22 @@ namespace Communication
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            var r = AC.Users.Where(c => c.login == LoginText.Text).FirstOrDefault();
-            if (r.password == PasswordText.Text) {
-                NowClass.NOW = r.login;
-                CommunicationWindow communicationWindow = new CommunicationWindow();
-                communicationWindow.Show();
-                this.Close();
+            if (LoginText.Text != null || PasswordText.Text != null)
+            {
+                var r = AC.Users.Where(c => c.login == LoginText.Text).FirstOrDefault();
+                if (r.password == PasswordText.Text)
+                {
+                    NowClass.NOW = r.login;
+                    CommunicationWindow communicationWindow = new CommunicationWindow();
+                    communicationWindow.Show();
+                    this.Close();
+                }
             }
-             
+            else
+            {
+                MessageBox.Show("Вы ничего не ввели", "Communication", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
         }
 
         private void RegButton_Click(object sender, RoutedEventArgs e)

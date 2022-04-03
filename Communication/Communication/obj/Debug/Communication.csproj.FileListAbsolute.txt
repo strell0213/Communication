@@ -38,7 +38,6 @@ C:\Users\strel\Desktop\Колледж\практикауп\Communication\Communi
 C:\Users\strel\Desktop\Колледж\практикауп\Communication\Communication\obj\Debug\Communication_MarkupCompile.lref
 C:\Users\strel\Desktop\Колледж\практикауп\Communication\Communication\obj\Debug\Communication.exe
 C:\Users\strel\Desktop\Колледж\практикауп\Communication\Communication\obj\Debug\Communication.pdb
-C:\Users\strel\Desktop\Колледж\практикауп\Communication\Communication\bin\Debug\communicationDB.db
 C:\Users\strel\Desktop\Колледж\практикауп\Communication\Communication\bin\Debug\Communication.exe.config
 C:\Users\strel\Desktop\Колледж\практикауп\Communication\Communication\bin\Debug\Communication.exe
 C:\Users\strel\Desktop\Колледж\практикауп\Communication\Communication\bin\Debug\Communication.pdb
@@ -58,3 +57,6 @@ C:\Users\strel\Desktop\Колледж\практикауп\Communication\Communi
 C:\Users\strel\Desktop\Колледж\практикауп\Communication\Communication\obj\Debug\Communication.csproj.GenerateResource.cache
 C:\Users\strel\Desktop\Колледж\практикауп\Communication\Communication\obj\Debug\Communication.csproj.CoreCompileInputs.cache
 C:\Users\strel\Desktop\Колледж\практикауп\Communication\Communication\obj\Debug\Communication.csproj.CopyComplete
+C:\Users\strel\Desktop\Колледж\практикауп\Communication\Communication\obj\Debug\AddQuestion.g.cs
+C:\Users\strel\Desktop\Колледж\практикауп\Communication\Communication\obj\Debug\AddQuestion.baml
+C:\Users\strel\Desktop\Колледж\практикауп\Communication\Communication\bin\Debug\communicationDB.db

@@ -74,15 +74,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddQuestion.xaml.cs">
+      <DependentUpon>AddQuestion.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AppContext.cs" />
     <Compile Include="CommunicationWindow.xaml.cs">
       <DependentUpon>CommunicationWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="NowClass.cs" />
+    <Compile Include="Question.cs" />
     <Compile Include="RegistrWindow.xaml.cs">
       <DependentUpon>RegistrWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
+    <Page Include="AddQuestion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CommunicationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

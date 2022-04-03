@@ -24,10 +24,34 @@ namespace Communication
         {
             InitializeComponent();
             AC = new AppContext();
+            
             var v = AC.Users.Where(c => c.login == NowClass.NOW).FirstOrDefault();
             if (v.RoleID == 1) {
                 TextVIEW.Text = v.login + "\nПользователь";
             }
+            string[] vs = v.questionId.Split(',', ' ');
+            int a;
+            foreach (string s in vs)
+            {
+                MessageBox.Show(s);
+                try
+                {
+                    a = Convert.ToInt32(s);
+                    var w = AC.Questions.Where(c => c.ID == a).FirstOrDefault();
+                    QueView.Items.Add(w.ID + "\nВаш вопрос: " + w.Questione + "\nОтвет: \n" + w.Answer);
+                    a = 0;
+                }
+                catch { }
+
+            }
+
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddQuestion add = new AddQuestion();
+            add.Show();
+            this.Close();
         }
     }
 }

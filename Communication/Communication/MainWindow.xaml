@@ -22,7 +22,7 @@
             </TextBox.Resources>
         </TextBox>
         <TextBlock HorizontalAlignment="Center" Margin="0,100,0,0" TextWrapping="Wrap" Text="Логин" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" Foreground="White"/>
-        <TextBlock HorizontalAlignment="Center" Margin="0,0,0,236" TextWrapping="Wrap" Text="Пароль" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="18" Foreground="White"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,174,0,0" TextWrapping="Wrap" Text="Пароль" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" Foreground="White"/>
         <Button x:Name="LoginButton" Content="Вход" HorizontalAlignment="Center" Margin="0,255,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Height="33" Width="112" BorderBrush="White" Foreground="White" Background="#FF282154" Click="LoginButton_Click">
             <Button.Resources>
                 <Style TargetType="Border">

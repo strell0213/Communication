@@ -28,18 +28,36 @@ namespace Communication
 
         private void RegButton_Click(object sender, RoutedEventArgs e)
         {
-            if (PasswordText.Text == RePasswordText.Text)
+            if (LoginText.Text != null || PasswordText.Text != null)
             {
-                User user = new User(LoginText.Text, PasswordText.Text, 0, 1);
-                AC.Users.Add(user);
-                AC.SaveChanges();
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.Show();
-                this.Close();
+                if (!LoginText.Text.Contains("@#$%&*!?"))
+                {
+                    if (PasswordText.Text == RePasswordText.Text)
+                    {
+                        User user = new User(LoginText.Text, PasswordText.Text, " ", 1);
+                        AC.Users.Add(user);
+                        AC.SaveChanges();
+                        MessageBox.Show("Успешно!", "Communication", MessageBoxButton.OK, MessageBoxImage.Information);
+                        MainWindow mainWindow = new MainWindow();
+                        mainWindow.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Пароли не совпадают", "Communication", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Логин имеет недопустимые знаки", "Communication", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
-            else {
-                MessageBox.Show("Пароли не совпадают","Communication", MessageBoxButton.OK, MessageBoxImage.Error);
+            else
+            {
+                MessageBox.Show("Вы ничего не ввели", "Communication", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+
+
         }
     }
 }

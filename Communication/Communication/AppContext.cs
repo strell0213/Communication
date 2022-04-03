@@ -11,6 +11,8 @@ namespace Communication
     {
         public DbSet<User> Users { get; set; }
 
+        public DbSet<Question> Questions { get; set; }
+
         public AppContext() : base("DefaultConnection") { }
     }
 }
