@@ -8,7 +8,7 @@
          Title="Communication" Height="720" Width="1080" ResizeMode="NoResize" SizeToContent="Manual" WindowStartupLocation="CenterScreen" WindowState="Normal">
     <Grid Background="#FF403582">
         <Grid Background="#FF2C255B" Height="82" VerticalAlignment="Top"/>
-        <Button x:Name="ProfileButton" Content="m" HorizontalAlignment="Left" Margin="958,17,0,0" VerticalAlignment="Top" Height="53" Width="95" Background="{x:Null}" Foreground="White" FontWeight="Bold" FontFamily="Webdings" FontSize="36" BorderBrush="White">
+        <Button x:Name="ProfileButton" Content="m" HorizontalAlignment="Left" Margin="958,17,0,0" VerticalAlignment="Top" Height="53" Width="95" Background="{x:Null}" Foreground="White" FontWeight="Bold" FontFamily="Webdings" FontSize="36" BorderBrush="White" Click="ProfileButton_Click">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5"/>

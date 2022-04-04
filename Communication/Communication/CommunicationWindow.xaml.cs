@@ -33,7 +33,7 @@ namespace Communication
             int a;
             foreach (string s in vs)
             {
-                MessageBox.Show(s);
+                
                 try
                 {
                     a = Convert.ToInt32(s);
@@ -51,6 +51,13 @@ namespace Communication
         {
             AddQuestion add = new AddQuestion();
             add.Show();
+            this.Close();
+        }
+
+        private void ProfileButton_Click(object sender, RoutedEventArgs e)
+        {
+            ProfileWindow profileWindow = new ProfileWindow();
+            profileWindow.Show();
             this.Close();
         }
     }

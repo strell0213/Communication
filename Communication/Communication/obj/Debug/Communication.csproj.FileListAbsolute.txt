@@ -60,3 +60,7 @@ C:\Users\strel\Desktop\Колледж\практикауп\Communication\Communi
 C:\Users\strel\Desktop\Колледж\практикауп\Communication\Communication\obj\Debug\AddQuestion.g.cs
 C:\Users\strel\Desktop\Колледж\практикауп\Communication\Communication\obj\Debug\AddQuestion.baml
 C:\Users\strel\Desktop\Колледж\практикауп\Communication\Communication\bin\Debug\communicationDB.db
+C:\Users\strel\Desktop\Колледж\практикауп\Communication\Communication\obj\Debug\ProfileWindow.g.cs
+C:\Users\strel\Desktop\Колледж\практикауп\Communication\Communication\obj\Debug\ProfileWindow.baml
+C:\Users\strel\Desktop\Колледж\практикауп\Communication\Communication\obj\Debug\EditWindow.g.cs
+C:\Users\strel\Desktop\Колледж\практикауп\Communication\Communication\obj\Debug\EditWindow.baml

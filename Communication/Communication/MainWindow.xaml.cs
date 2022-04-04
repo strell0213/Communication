@@ -29,20 +29,26 @@ namespace Communication
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            if (LoginText.Text != null || PasswordText.Text != null)
+            try
             {
-                var r = AC.Users.Where(c => c.login == LoginText.Text).FirstOrDefault();
-                if (r.password == PasswordText.Text)
+                if (LoginText.Text != null || PasswordText.Text != null)
                 {
-                    NowClass.NOW = r.login;
-                    CommunicationWindow communicationWindow = new CommunicationWindow();
-                    communicationWindow.Show();
-                    this.Close();
+                    var r = AC.Users.Where(c => c.login == LoginText.Text).FirstOrDefault();
+                    if (r.password == PasswordText.Text)
+                    {
+                        NowClass.NOW = r.login;
+                        CommunicationWindow communicationWindow = new CommunicationWindow();
+                        communicationWindow.Show();
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Вы ничего не ввели", "Communication", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
-            else
-            {
-                MessageBox.Show("Вы ничего не ввели", "Communication", MessageBoxButton.OK, MessageBoxImage.Error);
+            catch {
+                MessageBox.Show("Неправильный логин или пароль", "Communication", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
         }
