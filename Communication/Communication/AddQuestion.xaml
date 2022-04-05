@@ -18,7 +18,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="AdminQueButton" Content="Отправить вопрос администратору" HorizontalAlignment="Left" Margin="355,416,0,0" VerticalAlignment="Top" Height="53" Width="271" Background="{x:Null}" Foreground="White" FontWeight="Bold" FontFamily="Arial Black" BorderBrush="White">
+        <Button x:Name="AdminQueButton" Content="Отправить вопрос администратору" HorizontalAlignment="Left" Margin="355,416,0,0" VerticalAlignment="Top" Height="53" Width="271" Background="{x:Null}" Foreground="White" FontWeight="Bold" FontFamily="Arial Black" BorderBrush="White" Click="AdminQueButton_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="5"/>

@@ -51,13 +51,18 @@ namespace Communication
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            var r = AC.Users.Where(c => c.login == NowClass.NOW).FirstOrDefault();
-            if (r != null) { 
-                AC.Users.Remove(r);
-                AC.SaveChanges();
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.Show();
-                this.Close();
+
+            if (MessageBox.Show("Вы уверены что хотите удалить профиль?", "Communication", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                var r = AC.Users.Where(c => c.login == NowClass.NOW).FirstOrDefault();
+                if (r != null)
+                {
+                    AC.Users.Remove(r);
+                    AC.SaveChanges();
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.Show();
+                    this.Close();
+                }
             }
         }
     }

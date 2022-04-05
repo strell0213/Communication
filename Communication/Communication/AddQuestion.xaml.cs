@@ -58,18 +58,42 @@ namespace Communication
 
         private void YesMainButton_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                Question questionW = new Question(QueText.Text, CommAns.Items[0].ToString());
 
-            Question questionW = new Question(QueText.Text, CommAns.Items[0].ToString());
-            
+                AC.Questions.Add(questionW);
+                AC.SaveChanges();
+                var f = AC.Questions.Where(c => c.Questione == QueText.Text).FirstOrDefault();
+                var w = AC.Users.Where(c => c.login == NowClass.NOW).FirstOrDefault();
+                w.questionId += f.ID.ToString() + " ,";
+                AC.SaveChanges();
+                CommunicationWindow communicationWindow = new CommunicationWindow();
+                communicationWindow.Show();
+                this.Close();
+            }
+            catch {
+                MessageBox.Show("Приложение не смогло ответить на ваш вопрос. Отправте ваш вопрос администратору", "Communication", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void AdminQueButton_Click(object sender, RoutedEventArgs e)
+        {
+            Question questionW = new Question(QueText.Text, "");
+
             AC.Questions.Add(questionW);
             AC.SaveChanges();
             var f = AC.Questions.Where(c => c.Questione == QueText.Text).FirstOrDefault();
+            var r = AC.Users.Where(c => c.RoleID == 2).FirstOrDefault();
             var w = AC.Users.Where(c => c.login == NowClass.NOW).FirstOrDefault();
             w.questionId += f.ID.ToString() + " ,";
             AC.SaveChanges();
-            CommunicationWindow communicationWindow     = new CommunicationWindow();
+            r.questionId += f.ID.ToString() + " ,";
+            AC.SaveChanges();
+            CommunicationWindow communicationWindow = new CommunicationWindow();
             communicationWindow.Show();
             this.Close();
+            MessageBox.Show("Вопрос отправлен администратору", "Communication", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }
