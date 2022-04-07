@@ -29,19 +29,25 @@ namespace Communication
             {
                 TextVIEW.Text = v.login + "\nАдминистратор";
             }
+            update();
+          
+        }
+        public void update() {
+            QueView.Items.Clear();
+            var v = AC.Users.Where(c => c.login == NowClass.NOW).FirstOrDefault();
             string[] vs = v.questionId.Split(',', ' ');
             int a;
             var t = AC.Users.Where(c => c.questionId.Contains("")).FirstOrDefault(); ;
             foreach (string s in vs)
             {
-                 MessageBox.Show(s);
                 try
-                {   a = Convert.ToInt32(s);
+                {
+                    a = Convert.ToInt32(s);
                     t = AC.Users.Where(c => c.questionId.Contains(s) && c.RoleID == 1).FirstOrDefault();
-                    
-                        var w = AC.Questions.Where(c => c.ID == a).FirstOrDefault();
-                        QueView.Items.Add(w.ID + "\nВопрос от " + t.login + ": " + w.Questione);
-                    
+
+                    var w = AC.Questions.Where(c => c.ID == a).FirstOrDefault();
+                    QueView.Items.Add(w.ID + ".\nВопрос от " + t.login + ": " + w.Questione);
+
 
                 }
                 catch { }
@@ -59,10 +65,34 @@ namespace Communication
         {
 
         }
-
-        private void AddButton_Click(object sender, RoutedEventArgs e)
+        private void QueView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void AnswerButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            int d1;
+            if (QueView.SelectedItem.ToString()[1].ToString() == "." || QueView.SelectedItem.ToString()[1].ToString() == " ")
+            {
+                d1 = Convert.ToInt32(QueView.SelectedItem.ToString()[0].ToString());
+            }
+            else
+            {
+                d1 = Convert.ToInt32(QueView.SelectedItem.ToString()[0].ToString()) + Convert.ToInt32(QueView.SelectedItem.ToString()[0].ToString());
+            }
+            var r = AC.Questions.Where(c => c.ID == d1).FirstOrDefault();
+            if (r != null)
+            {
+                AC.Questions.Remove(r);
+                AC.SaveChanges();
+                update();
+            }
         }
     }
 }

@@ -15,30 +15,17 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="AddButton" Content="+" HorizontalAlignment="Left" Margin="21,17,0,0" VerticalAlignment="Top" Height="53" Width="95" Background="{x:Null}" Foreground="White" FontWeight="Bold" FontFamily="Arial Black" FontSize="36" BorderBrush="White" Click="AddButton_Click">
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="5"/>
-                </Style>
-            </Button.Resources>
-        </Button>
         <TextBlock x:Name="TextVIEW" HorizontalAlignment="Center" Margin="0,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" Foreground="White" FontSize="20"/>
-        <ListBox x:Name="QueView" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,87,0,0" Background="{x:Null}" BorderBrush="White" Foreground="White" FontWeight="Bold">
-            <!--<ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <Button></Button>
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>-->
-        </ListBox>
-            <Button x:Name="AllProfileButton" Content="Все пользователи" HorizontalAlignment="Left" Margin="822,17,0,0" VerticalAlignment="Top" Height="53" Width="131" Background="{x:Null}" Foreground="White" FontWeight="Bold" FontFamily="Arial" FontSize="11" BorderBrush="White" Click="AllProfileButton_Click">
+        <ListBox x:Name="QueView" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,111,0,0" Background="{x:Null}" BorderBrush="White" Foreground="White" FontWeight="Bold" SelectionChanged="QueView_SelectionChanged"></ListBox>
+        <Button x:Name="AllProfileButton" Content="Все пользователи" HorizontalAlignment="Left" Margin="19,17,0,0" VerticalAlignment="Top" Height="53" Width="132" Background="{x:Null}" Foreground="White" FontWeight="Bold" FontFamily="Arial" FontSize="11" BorderBrush="White" Click="AllProfileButton_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="5"/>
                 </Style>
             </Button.Resources>
         </Button>
+        <Button x:Name="AnswerButton" Content="Ответить" HorizontalAlignment="Left" Margin="514,82,0,0" VerticalAlignment="Top" Height="29" Width="283" Background="#FF2C255B" Foreground="White" Click="AnswerButton_Click"/>
+        <Button x:Name="Deletebutton" Content="Удалить" HorizontalAlignment="Left" Margin="797,82,0,0" VerticalAlignment="Top" Height="29" Width="283" Foreground="White" Background="#FF2C255B" Click="Button_Click"/>
 
     </Grid>
 </Window>
