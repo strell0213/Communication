@@ -33,7 +33,7 @@ namespace Communication
             int a;
             foreach (string s in vs)
             {
-                MessageBox.Show(s);
+               
                 try
                 {
                     a = Convert.ToInt32(s);

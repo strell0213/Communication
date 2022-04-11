@@ -26,6 +26,7 @@
         </Button>
         <Button x:Name="AnswerButton" Content="Ответить" HorizontalAlignment="Left" Margin="514,82,0,0" VerticalAlignment="Top" Height="29" Width="283" Background="#FF2C255B" Foreground="White" Click="AnswerButton_Click"/>
         <Button x:Name="Deletebutton" Content="Удалить" HorizontalAlignment="Left" Margin="797,82,0,0" VerticalAlignment="Top" Height="29" Width="283" Foreground="White" Background="#FF2C255B" Click="Button_Click"/>
+        <Button x:Name="updateButton" Content="Обновить" HorizontalAlignment="Left" Margin="0,82,0,0" VerticalAlignment="Top" Height="29" Width="514" Background="#FF2C255B" Foreground="White" Click="updateButton_click"/>
 
     </Grid>
 </Window>

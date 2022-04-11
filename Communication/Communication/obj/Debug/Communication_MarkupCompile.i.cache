@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\strel\Desktop\Колледж\практикауп\Communication\Communication\obj\Debug\
+C:\Users\strel\Desktop\Колледж\Communication\Communication\obj\Debug\
 Communication
 none
 false
 DEBUG;TRACE
-C:\Users\strel\Desktop\Колледж\практикауп\Communication\Communication\App.xaml
-71973842334
+C:\Users\strel\Desktop\Колледж\Communication\Communication\App.xaml
+10-266659049
 
-16-534504020
-19-432851660
-AddQuestion.xaml;AdminCommunicationWindow.xaml;CommunicationWindow.xaml;EditWindow.xaml;MainWindow.xaml;ProfileWindow.xaml;RegistrWindow.xaml;
+19725680147
+19-1495380303
+AddQuestion.xaml;AdminCommunicationWindow.xaml;AllProfileWindow.xaml;AnswerWindow.xaml;CommunicationWindow.xaml;EditWindow.xaml;MainWindow.xaml;NowProfileWindow.xaml;ProfileWindow.xaml;RegistrWindow.xaml;
 
 True
 

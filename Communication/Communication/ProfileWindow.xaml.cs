@@ -25,8 +25,12 @@ namespace Communication
             InitializeComponent();
             AC = new AppContext();
             var r = AC.Users.Where(c => c.login == NowClass.NOW).FirstOrDefault();
-            if (r.RoleID == 1) {
-                LoginBlock.Text = "    "+ r.login + "\nПользователь";
+            if (r.RoleID == 1)
+            {
+                LoginBlock.Text = "    " + r.login + "\nПользователь";
+            }
+            else if (r.RoleID == 2) { 
+                LoginBlock.Text = "    " + r.login + "\nЭксперт";
             }
         }
 
@@ -35,9 +39,15 @@ namespace Communication
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             var r = AC.Users.Where(c => c.login == NowClass.NOW).FirstOrDefault();
-            if (r.RoleID == 1) { 
+            if (r.RoleID == 1)
+            {
                 CommunicationWindow communicationWindow = new CommunicationWindow();
                 communicationWindow.Show();
+                this.Close();
+            }
+            else if (r.RoleID == 2) { 
+                AdminCommunicationWindow adminCommunicationWindow = new AdminCommunicationWindow();
+                adminCommunicationWindow.Show();
                 this.Close();
             }
         }

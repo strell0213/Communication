@@ -9,5 +9,8 @@ namespace Communication
     internal class NowClass
     {
         public static string NOW;
+        public static string NowAnswer;
+        public static int nowIDQue;
+        public static string newprof;
     }
 }

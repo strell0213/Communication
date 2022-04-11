@@ -29,8 +29,8 @@ namespace Communication
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 if (LoginText.Text != null || PasswordText.Text != null)
                 {
                     var r = AC.Users.Where(c => c.login == LoginText.Text).FirstOrDefault();
@@ -56,11 +56,11 @@ namespace Communication
                 {
                     MessageBox.Show("Вы ничего не ввели", "Communication", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
-            //}
-            //catch
-            //{
-            //    MessageBox.Show("Неправильный логин или пароль", "Communication", MessageBoxButton.OK, MessageBoxImage.Error);
-            //}
+            }
+            catch
+            {
+                MessageBox.Show("Неправильный логин или пароль", "Communication", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
 
         }
 

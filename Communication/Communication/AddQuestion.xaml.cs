@@ -73,7 +73,7 @@ namespace Communication
                 this.Close();
             }
             catch {
-                MessageBox.Show("Приложение не смогло ответить на ваш вопрос. Отправте ваш вопрос администратору", "Communication", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Приложение не смогло ответить на ваш вопрос. Отправте ваш вопрос эксперту", "Communication", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -93,7 +93,7 @@ namespace Communication
             CommunicationWindow communicationWindow = new CommunicationWindow();
             communicationWindow.Show();
             this.Close();
-            MessageBox.Show("Вопрос отправлен администратору", "Communication", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("Вопрос отправлен эксперту", "Communication", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }

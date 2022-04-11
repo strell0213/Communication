@@ -27,7 +27,7 @@ namespace Communication
             var v = AC.Users.Where(c => c.login == NowClass.NOW).FirstOrDefault();
             if (v.RoleID == 2)
             {
-                TextVIEW.Text = v.login + "\nАдминистратор";
+                TextVIEW.Text = v.login + "\nЭксперт";
             }
             update();
           
@@ -44,10 +44,15 @@ namespace Communication
                 {
                     a = Convert.ToInt32(s);
                     t = AC.Users.Where(c => c.questionId.Contains(s) && c.RoleID == 1).FirstOrDefault();
-
+                    
                     var w = AC.Questions.Where(c => c.ID == a).FirstOrDefault();
-                    QueView.Items.Add(w.ID + ".\nВопрос от " + t.login + ": " + w.Questione);
-
+                    if (w.Answer == "")
+                    {
+                        QueView.Items.Add(w.ID + ".\nВопрос от " + t.login + ": " + w.Questione);
+                    }
+                    else {
+                        QueView.Items.Add(w.ID + ".\nВопрос от " + t.login + ": " + w.Questione+"\nОтвеченно вами");
+                    }
 
                 }
                 catch { }
@@ -58,12 +63,16 @@ namespace Communication
 
         private void AllProfileButton_Click(object sender, RoutedEventArgs e)
         {
-
+            AllProfileWindow allProfileWindow = new AllProfileWindow();
+            allProfileWindow.Show();
+            
         }
 
         private void ProfileButton_Click(object sender, RoutedEventArgs e)
         {
-
+            ProfileWindow profileWindow = new ProfileWindow();
+            profileWindow.Show();
+            this.Close();
         }
         private void QueView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -72,7 +81,28 @@ namespace Communication
 
         private void AnswerButton_Click(object sender, RoutedEventArgs e)
         {
+            if (QueView.SelectedItem.ToString().Contains("Отвеченно вами"))
+            {
+                MessageBox.Show("Этот вопрос уже отвечен", "Communication", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                NowClass.NowAnswer = "";
+                NowClass.nowIDQue = 0;
 
+                int d1;
+                if (QueView.SelectedItem.ToString()[1].ToString() == "." || QueView.SelectedItem.ToString()[1].ToString() == " ")
+                {
+                    d1 = Convert.ToInt32(QueView.SelectedItem.ToString()[0].ToString());
+                }
+                else
+                {
+                    d1 = Convert.ToInt32(QueView.SelectedItem.ToString()[0].ToString()) + Convert.ToInt32(QueView.SelectedItem.ToString()[0].ToString());
+                }
+                NowClass.nowIDQue = d1;
+                AnswerWindow answerWindow = new AnswerWindow();
+                answerWindow.Show();
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -92,7 +122,13 @@ namespace Communication
                 AC.Questions.Remove(r);
                 AC.SaveChanges();
                 update();
+                MessageBox.Show("Успешно удалено!", "Communication", MessageBoxButton.OK, MessageBoxImage.Information);
             }
+        }
+
+        private void updateButton_click(object sender, RoutedEventArgs e)
+        {
+            update();
         }
     }
 }
