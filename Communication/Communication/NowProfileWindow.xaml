@@ -7,28 +7,39 @@
         mc:Ignorable="d"
         Title="Communication" Height="500" Width="300" ResizeMode="NoResize" SizeToContent="Manual" WindowStartupLocation="CenterScreen" WindowState="Normal">
     <Grid Background="#FF403582">
-        <TextBlock x:Name="LoginBlock" HorizontalAlignment="Center" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="33" Width="100" Margin="0,53,0,0" FontWeight="Bold" Foreground="White" FlowDirection="LeftToRight" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Hidden"/>
-        <Button x:Name="EditButton" Content="Выдать права эксперта" HorizontalAlignment="Center" Margin="0,0,0,40" VerticalAlignment="Bottom" Height="35" Width="300" Background="{x:Null}" Foreground="White" FontWeight="Bold" FontFamily="Times New Roman" FontSize="18" BorderBrush="White" Click="EditButton_Click">
+        <Button x:Name="EditButton" Content="Выдать права эксперта" HorizontalAlignment="Center" Margin="0,378,0,0" VerticalAlignment="Top" Height="35" Width="280" Background="{x:Null}" Foreground="White" FontWeight="Bold" FontFamily="Times New Roman" FontSize="18" BorderBrush="White" Click="EditButton_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="5"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="DeleteButton" Content="Удалить" HorizontalAlignment="Center" Width="300" Background="{x:Null}" Foreground="White" FontWeight="Bold" FontFamily="Times New Roman" FontSize="18" BorderBrush="White" Click="DeleteButton_Click" Height="35" VerticalAlignment="Bottom">
+        <Button x:Name="DeleteButton" Content="Удалить" HorizontalAlignment="Center" Width="280" Background="{x:Null}" Foreground="White" FontWeight="Bold" FontFamily="Times New Roman" FontSize="18" BorderBrush="White" Click="DeleteButton_Click" Height="35" VerticalAlignment="Top" Margin="0,418,0,0">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="5"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="BackButton" Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Height="36" Width="96" Background="{x:Null}" Foreground="White" FontWeight="Bold" FontFamily="Times New Roman" FontSize="18" BorderBrush="White" Click="BackButton_Click">
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="5"/>
-                </Style>
-            </Button.Resources>
-        </Button>
+        <Grid Margin="0,0,53,395" Background="#FF1D183C" Height="46" VerticalAlignment="Bottom">
+            <TextBlock x:Name="LoginBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Center" Height="34" Width="100" Margin="116,0,0,0" FontWeight="Bold" Foreground="White" FlowDirection="LeftToRight" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Hidden" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <Button x:Name="BackButton" Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Center" Height="36" Width="96" Background="{x:Null}" Foreground="White" FontWeight="Bold" FontFamily="Times New Roman" FontSize="18" BorderBrush="White" Click="BackButton_Click" Margin="10,0,0,0">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
 
     </Grid>
 </Window>

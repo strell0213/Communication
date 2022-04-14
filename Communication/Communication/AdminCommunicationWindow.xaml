@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="Communication" Height="720" Width="1080" ResizeMode="NoResize" SizeToContent="Manual" WindowStartupLocation="CenterScreen" WindowState="Normal">
     <Grid Background="#FF403582">
+        <Image Source="/цй.png" Stretch="Fill" HorizontalAlignment="Center" Width="1080" Height="607" VerticalAlignment="Top" Margin="0,87,0,0"/>
         <Grid Background="#FF2C255B" Height="82" VerticalAlignment="Top"/>
         <Button x:Name="ProfileButton" Content="m" HorizontalAlignment="Left" Margin="958,17,0,0" VerticalAlignment="Top" Height="53" Width="95" Background="{x:Null}" Foreground="White" FontWeight="Bold" FontFamily="Webdings" FontSize="36" BorderBrush="White" Click="ProfileButton_Click">
             <Button.Resources>
@@ -15,7 +16,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <TextBlock x:Name="TextVIEW" HorizontalAlignment="Center" Margin="0,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" Foreground="White" FontSize="20"/>
+        <TextBlock x:Name="TextVIEW" HorizontalAlignment="Left" Margin="782,17,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" Foreground="White" FontSize="20" Width="156" Height="53" FlowDirection="RightToLeft"/>
         <ListBox x:Name="QueView" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,111,0,0" Background="{x:Null}" BorderBrush="White" Foreground="White" FontWeight="Bold" SelectionChanged="QueView_SelectionChanged"></ListBox>
         <Button x:Name="AllProfileButton" Content="Все пользователи" HorizontalAlignment="Left" Margin="19,17,0,0" VerticalAlignment="Top" Height="53" Width="132" Background="{x:Null}" Foreground="White" FontWeight="Bold" FontFamily="Arial" FontSize="11" BorderBrush="White" Click="AllProfileButton_Click">
             <Button.Resources>

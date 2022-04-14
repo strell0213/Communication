@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Communication"
         mc:Ignorable="d"
-        Title="Communication" Height="450" Width="800" ResizeMode="NoResize" SizeToContent="Manual" WindowStartupLocation="CenterScreen" WindowState="Normal">
+        Title="Communication" Height="450" Width="800" ResizeMode="NoResize" SizeToContent="Manual" WindowStartupLocation="CenterScreen" WindowState="Normal" Topmost="True">
     <Grid Background="#FF403582">
+        <Image Source="/цй.png" Stretch="Fill" HorizontalAlignment="Center" Width="800" Height="450" VerticalAlignment="Top" Margin="0,-16,0,0"/>
         <TextBox x:Name="LoginText" HorizontalAlignment="Center" Margin="0,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="324" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Height="28" FontSize="14">
             <TextBox.Resources>
                 <Style TargetType="Border">
@@ -14,23 +15,24 @@
                 </Style>
             </TextBox.Resources>
         </TextBox>
-        <TextBox x:Name="PasswordText" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="324" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Height="28" FontSize="14">
+        <TextBox x:Name="PasswordText" TextWrapping="Wrap" VerticalAlignment="Stretch" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Height="28" FontSize="14" Margin="0,0,0,0" TextAlignment="Left" Width="324" HorizontalAlignment="Stretch">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="5"/>
                 </Style>
             </TextBox.Resources>
         </TextBox>
-        <TextBlock HorizontalAlignment="Center" Margin="0,100,0,0" TextWrapping="Wrap" Text="Логин" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" Foreground="White"/>
-        <TextBlock HorizontalAlignment="Center" Margin="0,174,0,0" TextWrapping="Wrap" Text="Пароль" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" Foreground="White"/>
-        <Button x:Name="LoginButton" Content="Вход" HorizontalAlignment="Center" Margin="0,255,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Height="33" Width="112" BorderBrush="White" Foreground="White" Background="#FF282154" Click="LoginButton_Click">
+        <TextBlock HorizontalAlignment="Center" Margin="0,100,0,0" Width="auto" Height="auto"  TextWrapping="Wrap" Text="Логин" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" Foreground="White"/>
+        <TextBlock HorizontalAlignment="Stretch" Margin="0,0,0,63" Width="67" Height="23"  TextWrapping="Wrap" Text="Пароль" VerticalAlignment="Stretch" FontWeight="Bold" FontSize="18" Foreground="White"/>
+        <Button x:Name="LoginButton" Content="Вход" HorizontalAlignment="Center" Margin="0,107,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="16" Height="33" Width="112" BorderBrush="White" Foreground="White" Background="#FF282154" Click="LoginButton_Click">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="RegButton" Content="Зарегистрироваться" HorizontalAlignment="Center" Margin="0,293,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Width="324" Foreground="#FFAEFFC9" Click="RegButton_Click"/>
+        <Button x:Name="RegButton" Content="Зарегистрироваться" HorizontalAlignment="Center" Margin="0,47,209,0" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" Width="114" Foreground="#FFAEFFC9" Click="RegButton_Click" HorizontalContentAlignment="Left"/>
+
 
     </Grid>
 </Window>

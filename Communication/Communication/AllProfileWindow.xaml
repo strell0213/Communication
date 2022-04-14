@@ -14,12 +14,25 @@
                         <TextBlock Text="{Binding ID}" ></TextBlock>
                         <TextBlock Text=". "></TextBlock>
                         <TextBlock Text="{Binding login}" Width="50"></TextBlock>
-                        <Button x:Name="DeleteProfile" Content="Удалить" Click="DeleteProfile_Click"></Button>
-                        <Button x:Name="FullProfile" Content="Профиль" Click="FullProfile_Click"></Button>
+                        <Button x:Name="DeleteProfile" Content="Удалить" Click="DeleteProfile_Click" Foreground="White" FontWeight="Bold" Background="#FF302763" BorderBrush="White">
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                        <Button x:Name="FullProfile" Content="Профиль" Click="FullProfile_Click" Foreground="White" FontWeight="Bold" Background="#FF302763" BorderBrush="White">
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <TextBlock HorizontalAlignment="Center" Margin="0,16,0,0" TextWrapping="Wrap" Text="Все пользователи" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="22"/>
 
 
     </Grid>

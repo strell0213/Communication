@@ -27,10 +27,10 @@ namespace Communication
             var r = AC.Users.Where(c => c.login == NowClass.NOW).FirstOrDefault();
             if (r.RoleID == 1)
             {
-                LoginBlock.Text = "    " + r.login + "\nПользователь";
+                LoginBlock.Text = r.login + "\nПользователь";
             }
             else if (r.RoleID == 2) { 
-                LoginBlock.Text = "    " + r.login + "\nЭксперт";
+                LoginBlock.Text = r.login + "\nЭксперт";
             }
         }
 
@@ -74,6 +74,13 @@ namespace Communication
                     this.Close();
                 }
             }
+        }
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
         }
     }
 }

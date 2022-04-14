@@ -42,5 +42,12 @@ namespace Communication
             }
 
         }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            ProfileWindow profileWindow = new ProfileWindow();
+            profileWindow.Show();
+            this.Close();
+        }
     }
 }

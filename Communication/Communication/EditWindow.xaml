@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="Communication" Height="450" Width="800" ResizeMode="NoResize" SizeToContent="Manual" WindowStartupLocation="CenterScreen">
     <Grid Background="#FF403582">
+        <Image Source="/цй.png" Stretch="Fill" HorizontalAlignment="Center" Width="800" Height="434" VerticalAlignment="Center"/>
         <TextBox x:Name="LoginText" HorizontalAlignment="Center" Margin="0,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="324" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Height="28" FontSize="14">
             <TextBox.Resources>
                 <Style TargetType="Border">
@@ -38,6 +39,13 @@
             </TextBox.Resources>
         </TextBox>
         <TextBlock HorizontalAlignment="Center" Margin="0,228,0,0" TextWrapping="Wrap" Text="Повторите пароль" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" Foreground="White"/>
+        <Button x:Name="BackButton" Content="Назад" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Height="33" Width="83" BorderBrush="White" Foreground="White" Background="#FF282154" Click="BackButton_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
 
     </Grid>
 </Window>
