@@ -81,15 +81,38 @@ namespace Communication
 
         private void AnswerButton_Click(object sender, RoutedEventArgs e)
         {
-            if (QueView.SelectedItem.ToString().Contains("Отвеченно вами"))
+            try
             {
-                MessageBox.Show("Этот вопрос уже отвечен", "Communication", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-            else
-            {
-                NowClass.NowAnswer = "";
-                NowClass.nowIDQue = 0;
+                if (QueView.SelectedItem.ToString().Contains("Отвеченно вами"))
+                {
+                    MessageBox.Show("Этот вопрос уже отвечен", "Communication", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    NowClass.NowAnswer = "";
+                    NowClass.nowIDQue = 0;
 
+                    int d1;
+                    if (QueView.SelectedItem.ToString()[1].ToString() == "." || QueView.SelectedItem.ToString()[1].ToString() == " ")
+                    {
+                        d1 = Convert.ToInt32(QueView.SelectedItem.ToString()[0].ToString());
+                    }
+                    else
+                    {
+                        d1 = Convert.ToInt32(QueView.SelectedItem.ToString()[0].ToString() + QueView.SelectedItem.ToString()[1].ToString());
+                    }
+                    NowClass.nowIDQue = d1;
+                    AnswerWindow answerWindow = new AnswerWindow();
+                    answerWindow.Show();
+                }
+            }
+            catch { MessageBox.Show("Вы ничего не выбрали!", "Communication", MessageBoxButton.OK, MessageBoxImage.Error); }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
                 int d1;
                 if (QueView.SelectedItem.ToString()[1].ToString() == "." || QueView.SelectedItem.ToString()[1].ToString() == " ")
                 {
@@ -97,33 +120,18 @@ namespace Communication
                 }
                 else
                 {
-                    d1 = Convert.ToInt32(QueView.SelectedItem.ToString()[0].ToString()) + Convert.ToInt32(QueView.SelectedItem.ToString()[0].ToString());
+                    d1 = Convert.ToInt32(QueView.SelectedItem.ToString()[0].ToString() + QueView.SelectedItem.ToString()[1].ToString());
                 }
-                NowClass.nowIDQue = d1;
-                AnswerWindow answerWindow = new AnswerWindow();
-                answerWindow.Show();
+                var r = AC.Questions.Where(c => c.ID == d1).FirstOrDefault();
+                if (r != null)
+                {
+                    AC.Questions.Remove(r);
+                    AC.SaveChanges();
+                    update();
+                    MessageBox.Show("Успешно удалено!", "Communication", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
             }
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            int d1;
-            if (QueView.SelectedItem.ToString()[1].ToString() == "." || QueView.SelectedItem.ToString()[1].ToString() == " ")
-            {
-                d1 = Convert.ToInt32(QueView.SelectedItem.ToString()[0].ToString());
-            }
-            else
-            {
-                d1 = Convert.ToInt32(QueView.SelectedItem.ToString()[0].ToString()) + Convert.ToInt32(QueView.SelectedItem.ToString()[0].ToString());
-            }
-            var r = AC.Questions.Where(c => c.ID == d1).FirstOrDefault();
-            if (r != null)
-            {
-                AC.Questions.Remove(r);
-                AC.SaveChanges();
-                update();
-                MessageBox.Show("Успешно удалено!", "Communication", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
+            catch { MessageBox.Show("Вы ничего не выбрали!", "Communication", MessageBoxButton.OK, MessageBoxImage.Error); }
         }
 
         private void updateButton_click(object sender, RoutedEventArgs e)

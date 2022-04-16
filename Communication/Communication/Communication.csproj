@@ -186,9 +186,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Без имени-2.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="цй.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

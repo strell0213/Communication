@@ -7,8 +7,16 @@
         mc:Ignorable="d"
         Title="Communication" Height="720" Width="1080" ResizeMode="NoResize" SizeToContent="Manual" WindowStartupLocation="CenterScreen" WindowState="Normal">
     <Grid Background="#FF403582">
-        <Image Source="/цй.png" Stretch="Fill" HorizontalAlignment="Center" Width="1080" Height="607" VerticalAlignment="Top" Margin="0,87,0,0"/>
-        <Grid Background="#FF2C255B" Height="82" VerticalAlignment="Top"/>
+        <Image Source="/цй.png" Stretch="Fill" HorizontalAlignment="Center" Width="1080" Height="617" VerticalAlignment="Top" Margin="0,87,0,0"/>
+        <Grid Background="#FF2C255B" Height="82" VerticalAlignment="Top">
+            <Border BorderBrush="Black" BorderThickness="1" Margin="698,12,0,7" HorizontalAlignment="Left" Width="372" Background="#FF1D183C">
+                <Border.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="25"/>
+                    </Style>
+                </Border.Resources>
+            </Border>
+        </Grid>
         <Button x:Name="ProfileButton" Content="m" HorizontalAlignment="Left" Margin="958,17,0,0" VerticalAlignment="Top" Height="53" Width="95" Background="{x:Null}" Foreground="White" FontWeight="Bold" FontFamily="Webdings" FontSize="36" BorderBrush="White" Click="ProfileButton_Click">
             <Button.Resources>
                 <Style TargetType="Border">

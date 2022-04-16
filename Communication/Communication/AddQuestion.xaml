@@ -10,7 +10,6 @@
         <Label Content="Ваш вопрос" HorizontalAlignment="Center" Margin="0,25,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" Foreground="White"/>
         <TextBox x:Name="QueText" HorizontalAlignment="Left" Margin="84,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="542" Height="113" Foreground="White" Background="#FF231C4C" FontWeight="Bold" HorizontalContentAlignment="Left" VerticalContentAlignment="Top"/>
         <Label Content="Communication:" HorizontalAlignment="Center" Margin="0,193,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" Foreground="White"/>
-        <ListBox x:Name="CommAns" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="84,240,94,128" Background="#FF231C4C" Foreground="White"/>
         <Button x:Name="YesMainButton" Content="Этот ответ мне подходит" HorizontalAlignment="Left" Margin="84,401,0,0" VerticalAlignment="Top" Height="53" Width="266" Background="{x:Null}" Foreground="White" FontWeight="Bold" FontFamily="Arial Black" BorderBrush="White" Click="YesMainButton_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -26,6 +25,19 @@
             </Button.Resources>
         </Button>
         <Button x:Name="CommAnsButton" Content="Ответ" HorizontalAlignment="Left" Margin="84,368,0,0" VerticalAlignment="Top" Height="28" Width="542" Background="{x:Null}" Foreground="White" FontWeight="Bold" FontFamily="Arial Black" BorderBrush="White" Click="CommAnsButton_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        
+        <ScrollViewer Margin="84,227,94,121">
+        <ListBox x:Name="CommAns" d:ItemsSource="{d:SampleData ItemCount=5}" Background="#FF231C4C" Foreground="White" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" FontWeight="Bold" HorizontalAlignment="Left" Width="542" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch">
+            
+        </ListBox>
+        </ScrollViewer>
+        <Button x:Name="BackButton" Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Height="36" Width="96" Background="{x:Null}" Foreground="White" FontWeight="Bold" FontFamily="Times New Roman" FontSize="18" BorderBrush="White" Click="BackButton_Click" Margin="10,5,0,0">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="5"/>
