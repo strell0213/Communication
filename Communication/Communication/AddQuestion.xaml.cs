@@ -51,7 +51,7 @@ namespace Communication
                     "Следует также отметить, что предварительное лужение можно и не выполнять, а просто скрутить проводки а распаечной коробке, обработать их флюсом и как следует пропаять. " +
                     "Однако так паять мы Вам не рекомендуем, потому что в этом случае соединение будет на порядок хуже.");
             }
-            else if (QueText.Text.Contains("Как собрать компьютер самому из комплектующих") || QueText.Text.Contains("Установка комплектующих") || QueText.Text.Contains("установка видеокарты") || QueText.Text.Contains("собрать комп") || QueText.Text.Contains("установка процессора") || QueText.Text.Contains("установка оперативной памяти") || QueText.Text.Contains("установка озу") || QueText.Text.Contains("установка процессора") || QueText.Text.Contains("поставить комплектующие"))
+            else if (QueText.Text.Contains("Как собрать компьютер самому из комплектующих") || QueText.Text.Contains("Установка комплектующих") || QueText.Text.Contains("установить видеокарт") || QueText.Text.Contains("собрать комп") || QueText.Text.Contains("установить процессор") || QueText.Text.Contains("установить оперативную память") || QueText.Text.Contains("установить озу") || QueText.Text.Contains("установка процессора") || QueText.Text.Contains("поставить комплектующие"))
             {
                 CommAns.Items.Add("В целом, сборка с нуля подразумевает следующий порядок выбора комплектующих.\nПроцессор\nСистема охлаждения, если не планируется боксовый вариант ЦПУ, который поставляется вместе с кулером в комплекте.\n" +
                     "Материнская плата\nОперативная память под материнскую плату.\nВидеокарта (если не устраивает встроенное решение).\n" +
@@ -205,6 +205,29 @@ namespace Communication
             CommunicationWindow communicationWindow = new CommunicationWindow();
             communicationWindow.Show();
             this.Close();
+        }
+
+        //функции для юнит тестов
+        public string AppAns(string res, string ans) {
+            if (ans.Contains("скрепить провод") || ans.Contains("починить провод") || ans.Contains("спаять провод") || ans.Contains("провод") || ans.Contains("провода"))
+            {
+                return res = "Успешно!";
+            }
+            else if (ans.Contains("Как собрать компьютер самому из комплектующих") || ans.Contains("Установка комплектующих") || ans.Contains("установить видеокарт") || ans.Contains("собрать комп") || ans.Contains("установить процессор") || ans.Contains("установить оперативную память") || ans.Contains("установить озу") || ans.Contains("установка процессора") || ans.Contains("поставить комплектующие"))
+            {
+                return res = "Успешно!";
+            }
+            else if (ans.Contains("гудит") || ans.Contains("трещит") || ans.Contains("скрипит") || ans.Contains("издает звуки") || ans.Contains("гудит при включении"))
+            {
+                return res = "Успешно!";
+            }
+            else if (ans.Contains("компьютер пищит") || ans.Contains("сигналы с компьютера") || ans.Contains("сигналы при включении компьютера") || ans.Contains("пикнул 1 раз") || ans.Contains("пикнул 2 раза") || ans.Contains("пикнул 3 раза"))
+            {
+                return res = "Успешно!";
+            }
+            else {
+                return res = "Ошибка";
+            }
         }
     }
 }

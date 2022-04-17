@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Communication", "Communication\Communication.csproj", "{20FF2318-CC6D-489C-B8F4-2477A6538980}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommunicationTest", "CommunicationTest\CommunicationTest.csproj", "{77DC3F0A-4F80-46E2-94AE-1903329B8323}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{20FF2318-CC6D-489C-B8F4-2477A6538980}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20FF2318-CC6D-489C-B8F4-2477A6538980}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20FF2318-CC6D-489C-B8F4-2477A6538980}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77DC3F0A-4F80-46E2-94AE-1903329B8323}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77DC3F0A-4F80-46E2-94AE-1903329B8323}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77DC3F0A-4F80-46E2-94AE-1903329B8323}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77DC3F0A-4F80-46E2-94AE-1903329B8323}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

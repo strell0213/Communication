@@ -70,6 +70,19 @@ namespace Communication
             registrWindow.Show();
             this.Close();
         }
+
+        //функции для юнит тестов
+        public string testlog(string res, string log, string pass)
+        {
+            if (log != null || pass != null)
+            {
+                return res = "Успешно!";
+            }
+            else
+            {
+                return res = "Ошибка";
+            }
+        }
     }
 
 }

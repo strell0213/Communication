@@ -24,12 +24,16 @@ namespace Communication
         {
             InitializeComponent();
             AC = new AppContext();
-            var v = AC.Users.Where(c => c.login == NowClass.NOW).FirstOrDefault();
-            if (v.RoleID == 2)
+            try
             {
-                TextVIEW.Text = v.login + "\nЭксперт";
+                var v = AC.Users.Where(c => c.login == NowClass.NOW).FirstOrDefault();
+                if (v.RoleID == 2)
+                {
+                    TextVIEW.Text = v.login + "\nЭксперт";
+                }
+                update();
             }
-            update();
+            catch { }
           
         }
         public void update() {
@@ -96,14 +100,18 @@ namespace Communication
                     if (QueView.SelectedItem.ToString()[1].ToString() == "." || QueView.SelectedItem.ToString()[1].ToString() == " ")
                     {
                         d1 = Convert.ToInt32(QueView.SelectedItem.ToString()[0].ToString());
+                        NowClass.nowIDQue = d1;
+                        AnswerWindow answerWindow = new AnswerWindow();
+                        answerWindow.Show();
                     }
                     else
                     {
                         d1 = Convert.ToInt32(QueView.SelectedItem.ToString()[0].ToString() + QueView.SelectedItem.ToString()[1].ToString());
+                        NowClass.nowIDQue = d1;
+                        AnswerWindow answerWindow = new AnswerWindow();
+                        answerWindow.Show();
                     }
-                    NowClass.nowIDQue = d1;
-                    AnswerWindow answerWindow = new AnswerWindow();
-                    answerWindow.Show();
+                    
                 }
             }
             catch { MessageBox.Show("Вы ничего не выбрали!", "Communication", MessageBoxButton.OK, MessageBoxImage.Error); }
@@ -138,5 +146,43 @@ namespace Communication
         {
             update();
         }
+
+        // функции для юнит тестов
+        public string answertest(string res, int NowNumber, string SelectedItemText) {
+            if (SelectedItemText.Contains("Отвеченно вами"))
+            {
+                return res = "Ошибка";
+            }
+            else
+            {
+                if (SelectedItemText[1].ToString() == "." || SelectedItemText[1].ToString() == " ")
+                {
+                    NowNumber = Convert.ToInt32(SelectedItemText[0].ToString());
+                    if (NowNumber >= 0)
+                    {
+                        return res = "Успешно!";
+                    }
+                    else
+                    {
+                        return res = "Ошибка";
+                    }
+                }
+                else
+                {
+                    NowNumber = Convert.ToInt32(SelectedItemText[0].ToString() + SelectedItemText[1].ToString());
+                    if (NowNumber != 0)
+                    {
+                        return res = "Успешно!";
+                    }
+                    else
+                    {
+                        return res = "Ошибка";
+                    }
+                }
+            }
+        }
+
+
+
     }
 }

@@ -66,5 +66,32 @@ namespace Communication
             mainWindow.Show();
             this.Close();
         }
+
+
+        //функции для юнит тестов
+        public string reg(string res, string log, string pass, string repass) {
+            if (log != null || pass != null)
+            {
+                if (!log.Contains("@#$%&*!?"))
+                {
+                    if (pass == repass)
+                    {
+                        return res = "Успешно!";
+                    }
+                    else
+                    {
+                        return res = "Ошибка";
+                    }
+                }
+                else
+                {
+                    return res = "Ошибка";
+                }
+            }
+            else
+            {
+                return res = "Ошибка";
+            }
+        }
     }
 }

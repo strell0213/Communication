@@ -24,14 +24,19 @@ namespace Communication
         {
             InitializeComponent();
             AC = new AppContext();
-            var r = AC.Users.Where(c => c.login == NowClass.NOW).FirstOrDefault();
-            if (r.RoleID == 1)
+            try
             {
-                LoginBlock.Text = r.login + "\nПользователь";
+                var r = AC.Users.Where(c => c.login == NowClass.NOW).FirstOrDefault();
+                if (r.RoleID == 1)
+                {
+                    LoginBlock.Text = r.login + "\nПользователь";
+                }
+                else if (r.RoleID == 2)
+                {
+                    LoginBlock.Text = r.login + "\nЭксперт";
+                }
             }
-            else if (r.RoleID == 2) { 
-                LoginBlock.Text = r.login + "\nЭксперт";
-            }
+            catch { }
         }
 
         
@@ -81,6 +86,23 @@ namespace Communication
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             this.Close();
+        }
+        //функции для юнит теста
+        public string Deletetest(string res, string Mresult, string prof) {
+            if (Mresult == "Yes")
+            {
+                prof = null;
+                if (prof == null)
+                {
+                    return res = "Успешно!";
+                }
+                else {
+                    return res = "Ошибка";
+                }
+            }
+            else {
+                return res = "Ошибка";
+            }
         }
     }
 }
